@@ -1,0 +1,26 @@
+<div class="group-wrapper">
+  <% if @entities.empty? %>
+    <p class="no-trans">No transactions yet</p>
+  <% else %>
+    <% @entities.each do |entity|%>
+      <%= link_to(entity_path(entity)) do %>
+        <ul class="group-container">
+          <li>
+              <img src="<%= entity.group.icon %>" alt="icon">
+              <h3><%= entity.name %></h3>
+              <%= entity.created_at.to_date.to_s %>
+            <h4 class="group-amount">
+              <%= entity.amount %>
+            </h4>
+          </li>
+        </ul>
+      <% end %>
+    <% end %>
+  <% end %>
+  <div class="a-link cat-leave">
+    <%= link_to('Back to groups', groups_path) %>
+    <%= link_to(new_entity_path, class: 'new-grp') do %>
+      <button type="button">Add Transaction</button>
+    <% end %>
+  </div>
+</div>
