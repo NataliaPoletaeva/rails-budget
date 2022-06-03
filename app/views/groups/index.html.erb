@@ -1,3 +1,4 @@
+<%= render 'devise/shared/navbar' %>
 <div class="group-wrapper">
   <% if @groups.empty? %>
     <p class="no-trans">You have no categories yet</p>
@@ -6,7 +7,7 @@
       <%= link_to(group_path(group)) do %>
         <ul class="group-container">
           <li>
-              <img src="<%= group.icon %>" alt="icon">
+              <img class='img' src="<%= group.icon %>" alt="icon">
               <h3><%= group.name %></h3>
               <%= group.created_at.to_date.to_s %>
               <h4 class="group-amount">
@@ -18,7 +19,7 @@
     <% end %>
   <% end %>
   <div class="a-link cat-leave">
-    <%= button_to('Leave', destroy_user_session_path, method: "delete", remote: true) %>
+    <%= button_to('Leave', destroy_user_session_path, method: "delete", remote: true, class: "leave grp-leave") %>
     <%= link_to(new_group_path, class: 'new-grp') do %>
       <button type="button">New Category</button>
     <% end %>
