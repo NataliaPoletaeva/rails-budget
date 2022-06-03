@@ -1,7 +1,8 @@
+<%= render 'devise/shared/navbar' %>
 <div class="group-wrapper">
   <ul class="transaction-container">
     <li>
-        <img src="<%= @entity.group.icon %>" alt="icon">
+        <img class='img' src="<%= @entity.group.icon %>" alt="icon">
         <h3><%= @entity.name %></h3>
         <%= @entity.created_at.to_date.to_s %>
       <p>
@@ -20,6 +21,6 @@
     </li>
   </ul>
   <div class="a-link cat-leave">
-    <%= link_to('Back to payments', entities_path) %>
+    <%= link_to('Back to payments', entities_path, class: "leave grp-leave") %>
   </div>
 </div>
