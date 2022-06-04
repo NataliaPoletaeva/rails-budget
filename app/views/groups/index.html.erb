@@ -1,4 +1,10 @@
-<%= render 'devise/shared/navbar' %>
+<nav>
+  <div class='back-btn'>
+  <%= button_to('<', destroy_user_session_path, method: "delete", remote: true) %>
+  </div>
+  <h1>Budget</h1>
+  <%= render 'devise/shared/navbar' %>
+</nav>
 <div class="group-wrapper">
   <% if @groups.empty? %>
     <p class="no-trans">You have no categories yet</p>
@@ -18,10 +24,9 @@
       <% end %>
     <% end %>
   <% end %>
-  <div class="a-link cat-leave">
-    <%= button_to('Leave', destroy_user_session_path, method: "delete", remote: true, class: "leave grp-leave") %>
+</div>
+<div class="a-link">
     <%= link_to(new_group_path, class: 'new-grp') do %>
       <button type="button">New Category</button>
     <% end %>
   </div>
-</div>
