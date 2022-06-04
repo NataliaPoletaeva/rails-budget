@@ -7,6 +7,7 @@
   list-style-type: none;
   text-decoration: none;
   font-family: 'Noto Sans', sans-serif;
+  color: #434b54;
 }
 
 nav {
@@ -20,15 +21,35 @@ nav {
   font-size: 0.825rem;
 }
 
+nav > h1 {
+  color: #fff;
+}
+
+a {
+  width: 90%;
+  margin: 0.5rem auto;
+  padding-left: 0.75rem;
+}
+
+.back-btn > a,
+.back-btn > form > button {
+  all: unset;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.actions > input {
+  all: unset;
+  color: #fff;
+  font-size: 1rem;
+}
+
 .nav-items {
   width: 80%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.nav-item {
-  padding: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-item > a {
@@ -36,13 +57,18 @@ nav {
   font-size: 1rem;
 }
 
+img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .img {
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .notice {
-  color: rgb(15, 189, 15);
+  color: #5fb523;
   text-align: center;
 }
 
@@ -52,12 +78,12 @@ nav {
 }
 
 .group-wrapper {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px;
-  margin: 1.5rem auto 0 auto;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin: 1rem auto 0 auto;
   border: 1px solid #e5e5e5;
   border-radius: 10px;
   background-color: #f1f3f2;
@@ -68,14 +94,16 @@ nav {
   text-align: center;
   padding: 20px;
   font-size: 16px;
-  color: #999;
+  color: #434b54;
   font-weight: bold;
 }
 
 .group-wrapper > a {
+  width: 100%;
   padding: 10px;
   background-color: #fff;
   color: #ababab;
+  margin: 0 auto;
 }
 
 .group-wrapper > .group-container {
@@ -83,28 +111,40 @@ nav {
   flex-direction: column;
   gap: 20px;
   padding: 0 20px;
-  background-color: #474747;
 }
 
 .group-container > li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .ent-amount {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  border-bottom: 1px solid #848586;
+  margin: 1rem auto 0.5rem auto;
   text-align: center;
-  background-color: #fff;
-  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+.ent-amount > div:nth-of-type(2) {
+  font-weight: 700;
 }
 
 .group-container > li > .group-amount {
   color: #000;
 }
 
-.group-wrapper > .a-link {
+.a-link {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   padding: 20px 20px;
   border: none;
-  background-color: #3082be;
+  background-color: #5fb523;
   outline: none;
   width: 100%;
   text-align: center;
@@ -116,17 +156,17 @@ nav {
   align-self: center;
 }
 
+.a-link > a {
+  border: 1px solid #fff;
+  padding: 10px 0;
+}
+
 .nav-item > a:hover {
   text-decoration: underline;
   font-weight: 700;
 }
 
-.group-wrapper > .a-link > a {
-  border: 1px solid #fff;
-  padding: 10px 0;
-}
-
-.group-wrapper > .a-link > a > button {
+.a-link > a > button {
   border: none;
   background-color: transparent;
   outline: none;
@@ -142,7 +182,7 @@ nav {
   gap: 20px;
   padding: 0 20px;
   background-color: #fff;
-  color: #999;
+  color: #434b54;
   border-radius: 5px;
 }
 
@@ -160,7 +200,7 @@ nav {
   justify-content: space-between;
   gap: 10px;
   align-items: flex-start;
-  border-top: 1px solid #999;
+  border-top: 1px solid #434b54;
   padding: 10px 0;
   color: #000;
   font-weight: 500;
@@ -173,7 +213,7 @@ nav {
   justify-content: space-between;
   gap: 10px;
   align-items: flex-start;
-  border-top: 1px solid #999;
+  border-top: 1px solid #434b54;
   padding: 10px 0;
   color: #000;
 }
@@ -217,33 +257,40 @@ nav {
 }
 
 .authenticate > a > .login-btn {
-  background-color: #3571b9;
+  background-color: #3778c2;
   color: #fff;
   text-transform: uppercase;
 }
 
 .authenticate > a > .sign-btn {
   background-color: #fff;
-  color: #3571b9;
+  color: #3778c2;
   text-transform: uppercase;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 form .field {
   display: flex;
   flex-direction: column;
-  gap: 5px;
   width: 100%;
   border-radius: 5px;
-  padding: 0 10px;
-  margin-top: 10px;
+  padding: 0 1rem;
   font-size: 1rem;
   outline: none;
+}
+
+form > .field > input,
+.group-new > form > .field > input {
+  border: none;
+  height: 3rem;
+  border-bottom: 1px solid #434b54;
+  padding: 0 0.5rem;
+  font-size: 1.05rem;
+  background-color: #fff;
 }
 
 form > .field > .texto {
@@ -254,6 +301,14 @@ form > .field > .texto {
   height: 40px;
   background-color: #f1f3f2;
   padding: 0 5px;
+}
+
+form > .field.check-box {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
 }
 
 form > .actions {
@@ -268,7 +323,7 @@ form > .actions > input[type="submit"] {
   outline: none;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #60b524;
+  background-color: #5fb523;
   color: #fff;
 }
 
@@ -277,16 +332,6 @@ form > .actions > input[type="submit"] {
   flex-direction: column;
   padding: 0 20px;
   font-size: small;
-}
-
-.cat-leave {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .grp-leave {
@@ -301,9 +346,9 @@ form > .actions > input[type="submit"] {
 }
 
 .a-link > .new-grp {
-  background-color: #60b524;
+  background-color: #5fb523;
 }
 
 .a-link > #new-grp {
-  background-color: #60b524;
+  background-color: #5fb523;
 }

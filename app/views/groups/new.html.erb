@@ -1,19 +1,23 @@
-<%= render 'devise/shared/navbar' %>
+<nav>
+  <div class='back-btn'>
+  <%= link_to('<', groups_path) %>
+  </div>
+  <h1>Groups</h1>
+  <%= render 'devise/shared/navbar' %>
+</nav>
 <div class="group-new">
   <%= form_with model: @group, url: groups_path do |form| %>
-    <div class="form-new-title field">
-      <%= form.label :name %>
-      <%= form.text_field :name, required: true, class: 'new-title texto' %>
+    <div class="field">
+      <%= form.text_field :name, placeholder: 'Name', required: true, class: 'new-title texto' %>
     </div>
-    <div class="form-new-post field">
-      <%= form.label :icon %>
-      <%= form.text_field :icon, required: true, class: 'texto' %>
+    <div class="field">
+      <%= form.text_field :icon, placeholder: 'Icon link', required: true, class: 'texto' %>
     </div>
     <div>
-      <%= form.hidden_field :author_id, value: current_user.id %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
     </div>
-    <div class="actions">
-      <%= form.submit class: 'form-submit-comment' %>  
+    <div class="actions a-link">
+      <%= form.submit class: 'new-grp' %>  
     </div>
   <% end %>
 </div>

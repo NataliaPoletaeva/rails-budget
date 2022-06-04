@@ -16,7 +16,7 @@ class EntitiesController < ApplicationController
     @entity = current_user.entities.new(entity_params)
     if @entity.save
       flash[:notice] = 'Transaction created'
-      redirect_to entities_path
+      redirect_to transaction_path
     else
       flash[:alert] = 'Transaction not created'
       render :new

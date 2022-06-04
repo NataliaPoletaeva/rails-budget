@@ -1,8 +1,4 @@
-<nav>
-  <h1>Budget</h1>
-  <ul class='nav-items'>
-    <li class='nav-item'><%= link_to 'Home', groups_path %></li>
-    <li class='nav-item'><%= link_to 'Groups', groups_path %></li>
-    <li class='nav-item'><%= link_to 'Transactions', entities_path %></li>
-  </ul>
-</nav>
+<div class='icons'>
+<%= link_to '<img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home">'.html_safe, groups_path %>
+<%= link_to '<img src="https://cdn-icons-png.flaticon.com/512/3037/3037156.png" alt="transaction">'.html_safe, entities_path %>
+</div>

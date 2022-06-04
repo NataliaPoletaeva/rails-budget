@@ -1,13 +1,18 @@
-<%= render 'devise/shared/navbar' %>
-<div class="group-wrapper">
-  <% if @entities.empty? %>
+<nav>
+  <div class='back-btn'>
+  <%= link_to('<', groups_path) %>
+  </div>
+  <h1>Budget</h1>
+  <%= render 'devise/shared/navbar' %>
+</nav>
+<% if @entities.empty? %>
     <p class="no-trans">No transactions for this category yet</p>
   <% else %>
-    <span class="group-amount ent-amount">
-      <%= "Total amount spent $#{@entities.sum(:amount)}" %>
-    </span>
-    <% @entities.each do |entity|%>
-      <%= link_to(entity_path(entity)) do %>
+  <div class="ent-amount">
+  <div>Total amount spent</div> <div><%= "$#{@entities.sum(:amount)}" %></div>
+    </div>
+  <div class="group-wrapper">
+     <% @entities.each do |entity|%>
         <ul class="group-container">
           <li>
               <img class='img' src="<%= entity.group.icon %>" alt="icon">
@@ -19,11 +24,9 @@
           </li>
         </ul>
       <% end %>
-    <% end %>
   <% end %>
-  <div class="a-link cat-leave">
-    <%= link_to('Back to groups', groups_path, class: "leave grp-leave") %>
-    <%= link_to(new_entity_path, class: 'new-grp') do %>
+  <div class="a-link">
+    <%= link_to(new_group_entity_path(@group), class: 'new-grp') do %>
       <button type="button">Add Transaction</button>
     <% end %>
   </div>
