@@ -1,0 +1,25 @@
+<nav>
+  <div class='back-btn'>
+  <%= link_to('<', groups_path) %>
+  </div>
+  <h1>Transactions</h1>
+  <%= render 'devise/shared/navbar' %>
+</nav>
+<div class="group-wrapper">
+  <% if @entities.empty? %>
+    <p class="no-trans">No transactions yet</p>
+  <% else %>
+    <% @entities.each do |entity|%>
+        <ul class="group-container">
+          <li>
+              <img class='img' src="<%= entity.group.icon %>" alt="icon">
+              <h3><%= entity.name %></h3>
+              <%= entity.created_at.to_date.to_s %>
+            <h4 class="group-amount">
+              <%= entity.amount %>
+            </h4>
+          </li>
+        </ul>
+      <% end %>
+  <% end %>
+</div>
